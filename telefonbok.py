@@ -20,13 +20,26 @@ vis_alle()
 
 def legg_til():
     navn= input("skriv inn navn: ")
-    nummer = input("skriv inn telefonnummer: ")
-    person = {"navn": navn, "nummer": nummer}
+    telefonnummer = input("skriv inn telefonnummer: ")
+    person = {"navn": navn, "telefonnummer": telefonnummer}
     telefonbok.append(person)                           #legger til personen bruker laget med append
     print(f"{navn} ble lagt til i telefonboka.")
 
 #vi kaller på funksjonen
 legg_til()
 
-#printer for og sjekke at det funket
-print(telefonbok)
+def søk():
+    navn_søk = input("Skriv inn navnet du vil søke etter: ").lower()
+    funnet = False
+
+    for person in telefonbok:
+        if person["navn"].lower() == navn_søk:
+            print(f"Fant {person['navn']} med telefonnummer: {person['telefonnummer']}.")
+            funnet = True
+            break
+    
+    if not funnet:
+        print(f"{navn_søk} ble ikke funnet i telefonboka.")
+
+# kaller på funksjonen
+søk()
