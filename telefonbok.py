@@ -18,3 +18,15 @@ vis_alle()
 
 
 
+def legg_til():
+    navn= input("skriv inn navn: ")
+    nummer = input("skriv inn telefonnummer: ")
+    person = {"navn": navn, "nummer": nummer}
+    telefonbok.append(person)                           #legger til personen bruker laget med append
+    print(f"{navn} ble lagt til i telefonboka.")
+
+#vi kaller på funksjonen
+legg_til()
+
+#printer for og sjekke at det funket
+print(telefonbok)
