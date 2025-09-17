@@ -43,3 +43,23 @@ def søk():
 
 # kaller på funksjonen
 søk()
+
+#legger til hovedmeny for og bruke de funksjonen 
+while True:
+    print("1. Vis alle")
+    print("2. Legg til")
+    print("3. Søk")
+    print("4. Avslutt")
+
+    valg = input("hva vil du gjøre? ").lower()
+
+    if valg == "1":
+        vis_alle()
+    elif valg == "2":
+        legg_til()
+    elif valg == "3":
+        søk()
+    elif valg == "4": 
+        break
+    else:
+        print("Ugyldig valg. Prøv igjen.")
